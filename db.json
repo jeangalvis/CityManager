@@ -1,0 +1,68 @@
+{
+  "Departamentos": [
+    {
+      "id": 1,
+      "nomDepartamento": "Santander"
+    },
+    {
+      "id": 2,
+      "nomDepartamento": "Cundinamarca"
+    },
+    {
+      "nomDepartamento": "magdalena",
+      "id": 3
+    }
+  ],
+  "Ciudades": [
+    {
+      "id": 1,
+      "nomCiudad": "Bucaramanga",
+      "departamentoId": 1,
+      "imagen": "https://caracoltv.brightspotcdn.com/dims4/default/40f81cd/2147483647/strip/true/crop/1000x716+0+0/resize/1000x716!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2Fe3%2F31%2Fdb28d55b4f61962cce50426839da%2Ffoto-nueva-bucaramanga.jfif",
+      "coordenadas": {
+        "lat": 4,
+        "lon": 72
+      }
+    },
+    {
+      "id": 2,
+      "nomCiudad": "Barrancabermeja",
+      "departamentoId": 1,
+      "imagen": "https://caracoltv.brightspotcdn.com/dims4/default/40f81cd/2147483647/strip/true/crop/1000x716+0+0/resize/1000x716!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2Fe3%2F31%2Fdb28d55b4f61962cce50426839da%2Ffoto-nueva-bucaramanga.jfif",
+      "coordenadas": {
+        "lat": 4,
+        "lon": 72
+      }
+    },
+    {
+      "id": 3,
+      "nomCiudad": "Bogotá",
+      "departamentoId": 2,
+      "imagen": "https://caracoltv.brightspotcdn.com/dims4/default/40f81cd/2147483647/strip/true/crop/1000x716+0+0/resize/1000x716!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2Fe3%2F31%2Fdb28d55b4f61962cce50426839da%2Ffoto-nueva-bucaramanga.jfif",
+      "coordenadas": {
+        "lat": 4,
+        "lon": 72
+      }
+    },
+    {
+      "id": 4,
+      "nomCiudad": "Cajicá",
+      "departamentoId": 2,
+      "imagen": "https://caracoltv.brightspotcdn.com/dims4/default/40f81cd/2147483647/strip/true/crop/1000x716+0+0/resize/1000x716!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2Fe3%2F31%2Fdb28d55b4f61962cce50426839da%2Ffoto-nueva-bucaramanga.jfif",
+      "coordenadas": {
+        "lat": 4,
+        "lon": 72
+      }
+    },
+    {
+      "id": 5,
+      "nomCiudad": "santa marta",
+      "departamentoId": 3,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Rodaderoskyline.png",
+      "coordenadas": {
+        "lat": "11.24079",
+        "lon": "-74.19904"
+      }
+    }
+  ]
+}

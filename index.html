@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Gestor de ciudades</title>
+  </head>
+  <body id="bodyClass">
+
+  <div class="menu">
+    <h1>Gestor de Ciudades</h1>
+  </div>
+  <div class="d-flex justify-content-center gap-2">
+    <button  id="claro">Tema claro</button>
+    <button  id="oscuro">Tema oscuro</button>
+</div>
+  <div class="container">
+    <!-- ---------------------Departamentos--------------------------- -->
+    <div class="container_BtnNewDepartment mt-4">
+      <!-- Button trigger modal departamentos-->
+      <button
+        class="btn btn-success"
+        type="button"
+        id="new_Department"
+        data-bs-toggle="modal"
+        data-bs-target="#newDepartmentModal"
+      >
+        Nuevo Departamento <i class="fa-solid fa-plus" style="color: #ffffff"></i>
+      </button>
+      <!-- Modal departamentos -->
+      <div
+        class="modal fade"
+        id="newDepartmentModal"
+        tabindex="-1"
+        aria-labelledby="newDepartmentModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="newDepartmentModalLabel">
+                Agregar un Departamento
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form class="form-control form_Department border-0" id="form_Department">
+                <div class="mb-3">
+                  <label for="field_NameDepartment" class="form-label"
+                    >Nombre del Departamento</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="field_NameDepartment"
+                    placeholder=""
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button type="button" class="btn btn-primary" id="btn_AddDepartment">
+                Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- modal actualizar Departamnetos -->
+      <div
+        class="modal fade"
+        id="updateDepartmentModal"
+        tabindex="-1"
+        aria-labelledby="updateDepartmentModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="updateDepartmentModalLabel">
+                actualizar Departamento
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form class="form-control form_Department border-0" id="form_Department">
+                <div class="mb-3">
+                  <label for="field_UpdateNameDepartment" class="form-label"
+                    >Nombre del Departamento</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="field_UpdateNameDepartment"
+                    placeholder=""
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="btn_UpdateDepartment"
+              >
+                actualizar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="table-responsive departments_Container mt-3">
+      <table class="table text-light">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre Departamento</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody_Departments"></tbody>
+      </table>
+    </div>
+
+    <!-- ---------------------ciudades--------------------------- -->
+    <div class="cities d-none" id="cities">
+      <div class="btnNewCity mt-4">
+        <!-- boton modal ciudades -->
+        <button
+          class="btn btn-success"
+          type="button"
+          id="new_City"
+          data-bs-toggle="modal"
+          data-bs-target="#newCityModal"
+        >
+          Nueva Ciudad <i class="fa-solid fa-plus" style="color: #ffffff"></i>
+        </button>
+        <!-- modal ciudades -->
+        <div
+          class="modal fade"
+          id="newCityModal"
+          tabindex="-1"
+          aria-labelledby="newCityModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="newCityModalLabel">
+                  Agregar Ciudad
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form class="form-control form_City border-0" id="form_City">
+                  <div class="mb-3">
+                    <label for="field_NameCity" class="form-label"
+                      >Nombre de la Ciudad</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="field_NameCity"
+                      placeholder=""
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="field_Image" class="form-label"
+                      >Imagen</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="field_Image"
+                      placeholder="Url..."
+                    />
+                  </div>
+                <div class="d-flex justify-content-between">
+                  <div class="col-5">
+                    <label for="field_Lat" class="form-label"
+                      >Latitud</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="field_Lat"
+                      placeholder=""
+                    />
+                  </div>
+                  <div class="col-5">
+                    <label for="field_Lon" class="form-label"
+                      >Longitud</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="field_Lon"
+                      placeholder=""
+                    />
+                  </div>
+                </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cerrar
+                </button>
+                <button type="button" class="btn btn-primary" id="btn_AddCity">
+                  Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- modal modificar ciudades -->
+        <div
+          class="modal fade"
+          id="updateCityModal"
+          tabindex="-1"
+          aria-labelledby="updateCityModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="updateCityModalLabel">
+                  Actualizar Ciudad
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form class="form-control form_City border-0" id="form_City">
+                  <div class="mb-3">
+                    <label for="field_updateNameCity" class="form-label"
+                      >Nombre de la Ciudad</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="field_updateNameCity"
+                      placeholder=""
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="field_UpdateImage" class="form-label"
+                      >Imagen</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="field_UpdateImage"
+                      placeholder="Url..."
+                    />
+                  </div>
+                <div class="d-flex justify-content-between">
+                  <div class="col-5">
+                    <label for="field_UpdateLat" class="form-label"
+                      >Latitud</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="field_UpdateLat"
+                      placeholder=""
+                    />
+                  </div>
+                  <div class="col-5">
+                    <label for="field_UpdateLon" class="form-label"
+                      >Longitud</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="field_UpdateLon"
+                      placeholder=""
+                    />
+                  </div>
+                </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cerrar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="btn_UpdateCity"
+                >
+                  Modificar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- tabla ciudades -->
+      <div class="table-responsive cities_Container mt-3">
+        <table class="table text-light">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nombre de Ciudad</th>
+              <th scope="col">Imagen</th>
+              <th scope="col">temp</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody_Cities"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  
+    <script
+      src="https://kit.fontawesome.com/3aa35500f9.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
